@@ -2,6 +2,7 @@ import HeroOverview from "./components/HeroOverview";
 import HabitRecommendations from "./components/HabitRecommendations";
 import ManualTracker from "./components/ManualTracker";
 import ToolRecommendations from "./components/ToolRecommendations";
+import StudyMaterials from "./components/StudyMaterials";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <nav className="hidden gap-6 text-sm text-gray-600 sm:flex">
             <a href="#habits" className="hover:text-gray-900">Habits</a>
             <a href="#tracker" className="hover:text-gray-900">Tracker</a>
+            <a href="#materials" className="hover:text-gray-900">Materials</a>
             <a href="#tools" className="hover:text-gray-900">Tools</a>
           </nav>
         </div>
@@ -28,6 +30,9 @@ function App() {
         <section id="tracker">
           <ManualTracker />
         </section>
+        <section id="materials">
+          <StudyMaterials />
+        </section>
         <section id="tools">
           <ToolRecommendations />
         </section>
@@ -36,7 +41,7 @@ function App() {
       <footer className="border-t border-gray-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-gray-600">
           <p>
-            Use this page for your 3‑week validation. Export your data, then choose an app or build a custom site to scale long‑term.
+            Use this page for your 3‑week validation. Export your data, bookmark study references, then choose an app or build a custom site to scale long‑term.
           </p>
         </div>
       </footer>
