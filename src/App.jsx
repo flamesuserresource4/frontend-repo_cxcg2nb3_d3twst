@@ -1,28 +1,47 @@
-import { useState } from 'react'
+import HeroOverview from "./components/HeroOverview";
+import HabitRecommendations from "./components/HabitRecommendations";
+import ManualTracker from "./components/ManualTracker";
+import ToolRecommendations from "./components/ToolRecommendations";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white text-gray-900">
+      <header className="sticky top-0 z-10 border-b border-emerald-100 bg-white/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <div className="flex items-center gap-2">
+            <div className="h-3 w-3 rounded-full bg-emerald-500" />
+            <span className="text-sm font-semibold tracking-wide text-emerald-800">21‑Day Habit Validator</span>
+          </div>
+          <nav className="hidden gap-6 text-sm text-gray-600 sm:flex">
+            <a href="#habits" className="hover:text-gray-900">Habits</a>
+            <a href="#tracker" className="hover:text-gray-900">Tracker</a>
+            <a href="#tools" className="hover:text-gray-900">Tools</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <HeroOverview />
+        <section id="habits">
+          <HabitRecommendations />
+        </section>
+        <section id="tracker">
+          <ManualTracker />
+        </section>
+        <section id="tools">
+          <ToolRecommendations />
+        </section>
+      </main>
+
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-gray-600">
+          <p>
+            Use this page for your 3‑week validation. Export your data, then choose an app or build a custom site to scale long‑term.
+          </p>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
